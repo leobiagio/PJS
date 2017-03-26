@@ -183,7 +183,7 @@ width:auto;
 <script>
   $(document).ready(function() {
 	  
-	  $('a_predio').qtip({
+	  $('#a_predio').qtip({
                     content: {
                         text: "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc",
 			    style: 'qtip-dark',
@@ -193,14 +193,7 @@ width:auto;
              adjust: { x: 5, y: 5 } 
                                         
          }
-                });
-	  
-	  
-    Tipped.create(a_quadra, "Quadra", { behavior: 'mouse', size: 'large' });
-    Tipped.create(a_estacionamento, "Estacionamento", { behavior: 'mouse', size: 'large' });
-    Tipped.create(a_portaria, "Portaria", { behavior: 'mouse', size: 'large' });
-    Tipped.create(a_ginasio, "Ginásio", { behavior: 'mouse', size: 'large' });
-  });
+                })
 </script>
 
 
