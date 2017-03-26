@@ -181,17 +181,19 @@ width:auto;
 
 
 <script>
-  $(document).ready(function() {
-	  
-	  $(document.getElementById('a_quadra')).qtip({
-		  content: {
-		text: 'Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc'
-	},
-	style: {
+ $(document).ready(function()
+ {
+     $('#a_campus').qtip({
+         content: 'Mouse tracking!',
+         style: {
 		classes: 'qtip-dark qtip-shadow qtip-rounded'
-	}
-});
-  })
+	},
+         position: {
+             target: 'mouse', // Track the mouse as the positioning target
+             adjust: { x: 5, y: 5 } // Offset it slightly from under the mouse
+         }
+     });
+ });
 		  
                  
   
