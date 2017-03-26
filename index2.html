@@ -185,14 +185,14 @@ width:auto;
 	  
 	  $(a_predio).qtip({
                     content: {
-                        text: "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc" // Use each elements title attribute
-                    },
-                    style: 'qtip-dark' // Give it some style
+                        text: "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc",
+			    style: 'qtip-dark',
 		  position: {
              target: 'mouse', 
              adjust: { x: 5, y: 5 } 
+                    }                    
          }
-                });
+                }));
 	  
 	  
     Tipped.create(a_quadra, "Quadra", { behavior: 'mouse', size: 'large' });
