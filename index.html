@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,9 +11,9 @@
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/buttons/2.0.0/js/buttons.js" >
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/tipped/4.0.10/js/tipped/tipped.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/buttons/2.0.0/css/buttons.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/tipped/4.0.10/css/tipped/tipped.css"/>
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css"/>
 
 <style>
 html, body {
@@ -21,28 +21,22 @@ html, body {
 	height:100%;
 	margin:0;
 }
-
 #button1 {
     position:relative   
 }
-
 #button2 {    
 position:relative	
 }
-
 #button3 {    
 position:relative
 }
-
 #button4 {    
 position:relative
 }
-
 #svgmapa {
 position: relative;
 height:80%;
 width:auto;
-
 }
 </style>
 
@@ -82,7 +76,7 @@ width:auto;
   </rdf:RDF>
  </metadata>
  <g id="g53" transform="translate(-152.23 -35.11)" inkscape:groupmode="layer" inkscape:label="Camada 1">
-  <g id="a_campus" inkscape:label="a_campus">
+  <g id="a_campus" inkscape:label="a_campus" data-tooltip="Prédio principal">
    <g id="g5289" fill="#008100" inkscape:label="g5289">
     <g id="a_predio" inkscape:label="a_predio">
      <path id="path35" d="m261.56 166.22h36.286v20.033h-36.286z" opacity=".705" inkscape:connector-curvature="0"/>
@@ -188,7 +182,19 @@ width:auto;
 
 <script>
   $(document).ready(function() {
-    Tipped.create(a_predio, "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc", {behavior: 'mouse', size: 'large'});
+	  
+	  $(a_predio).qtip({
+                    content: {
+                        text: "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc" // Use each elements title attribute
+                    },
+                    style: 'qtip-dark' // Give it some style
+		  position: {
+             target: 'mouse', 
+             adjust: { x: 5, y: 5 } 
+         }
+                });
+	  
+	  
     Tipped.create(a_quadra, "Quadra", { behavior: 'mouse', size: 'large' });
     Tipped.create(a_estacionamento, "Estacionamento", { behavior: 'mouse', size: 'large' });
     Tipped.create(a_portaria, "Portaria", { behavior: 'mouse', size: 'large' });
@@ -213,7 +219,6 @@ $(a_campus).hide();
 $(a_primeiro).show();	
 $(a_segundo).hide();
 $(a_terceiro).hide();
-
 }
 	</script>
     
@@ -238,3 +243,4 @@ $(a_terceiro).show();
 
 </body>
 </html>
+
