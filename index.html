@@ -184,15 +184,16 @@ width:auto;
   $(document).ready(function() {
 	  
 	  $(document.getElementById('a_predio')).qtip({
-                    content: 'Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc',		 
-		    style: 'qtip-dark',    
-			    
-		  position: {
-             target: 'mouse', 
-             adjust: { x: 5, y: 5 }                                         
-         }
-                });
-  });
+		  content: {
+		text: 'Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc'
+	},
+	style: {
+		classes: 'qtip-dark qtip-shadow qtip-rounded'
+	}
+});
+		  
+                 
+  
 </script>
 
 
