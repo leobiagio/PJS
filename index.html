@@ -1,76 +1,65 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="googlebot" content="noindex, nofollow" />
-
-  
-  
-
-  
-  
-  
-
-  
-
-  <script type="text/javascript" src="//code.jquery.com/jquery-3.1.1.js"></script>
-
-  
-
-  
-    
-  
-   
-    
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-  
-    
-      <link rel="stylesheet" type="text/css" href="http://qtip2.com/v/stable/jquery.qtip.css" />
-    
-  
-
-  <style type="text/css">
-    
-}
-  </style>
-
-  <title>qTip2 - Anchor the tooltip to the mouse</title>
-
-  
-    
-
-
-
-
-<script type='text/javascript'>//<![CDATA[
-window.onload=function(){
-$(document).ready(function()
- {
-     $('#a_predio').qtip({
-         content: 'Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc!',
-         style: {
-		classes: 'qtip-dark qtip-shadow qtip-rounded'
-	},
-         position: {
-             target: 'mouse', // Track the mouse as the positioning target
-             adjust: { x: 5, y: 5 } // Offset it slightly from under the mouse
-         }
-     });
- });
-
-}//]]> 
-
-</script>
-
-  
+<meta charset="utf-8">
+<title>Documento sem título</title>
 </head>
 
 <body>
-  <svg id="svgmapa"  inkscape:version="0.92.1 r15371" sodipodi:docname="mapa_campus.svg" version="1.1" viewBox="0 0 244.7394 270.86922" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
+
+<script type="text/javascript" src="jquery-3.1.1.min.js" >
+</script>
+<script type="text/javascript" src="tipped.js"></script>
+<link rel="stylesheet" type="text/css" href="buttons.css"/>
+<link rel="stylesheet" type="text/css" href="tipped.css"/>
+
+<style>
+html, body {
+	width:100%;
+	height:100%;
+	margin:0;
+}
+
+#button1 {
+    position:relative   
+}
+
+#button2 {    
+position:relative	
+}
+
+#button3 {    
+position:relative
+}
+
+#button4 {    
+position:relative
+}
+
+#svgmapa {
+position: relative;
+height:80%;
+width:auto;
+
+}
+</style>
+
+  <button id = "button1" class="button button-border" onclick="javascript:setMapVisible1()">Campus </button>
+  <button id = "button2" class="button button-border" onclick="javascript:setMapVisible2()">1º andar </button>
+  <button id = "button3" class="button button-border" onclick="javascript:setMapVisible3()">2º andar </button>
+  <button id = "button4" class="button button-border" onclick="javascript:setMapVisible4()">3º andar </button>
+ 
+ <form id = "search">
+ <input name="fname" type="text" id = "text_search" th placeholder="Procurar uma sala específica">
+ <input type="button" id = "button5" class="button button-border button-tiny" value="Procurar"></input>
+</form>
+
+ 
+ 
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg id="svgmapa"  inkscape:version="0.92.1 r15371" sodipodi:docname="mapa_campus.svg" version="1.1" viewBox="0 0 244.7394 270.86922" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
  <defs id="defs30">
   <inkscape:path-effect id="path-effect18" effect="spiro" is_visible="true"/>
   <inkscape:path-effect id="path-effect20" effect="spiro" is_visible="true"/>
@@ -190,20 +179,72 @@ $(document).ready(function()
  </g>
 </svg>
 
-  
-  <script>
-  // tell the embed parent frame the height of the content
-  if (window.parent && window.parent.parent){
-    window.parent.parent.postMessage(["resultsFrame", {
-      height: document.body.getBoundingClientRect().height,
-      slug: "None"
-    }], "*")
-  }
+
+
+
+
+
+<script>
+
+  $(document).ready(function() {
+    Tipped.create(a_predio, "Prédio Principal <br> Contém todas as salas de aula, laboratórios, administração etc", { behavior: 'mouse', size: 'large' });
+  });
+    $(document).ready(function() {
+    Tipped.create(a_quadra, "Quadra", { behavior: 'mouse', size: 'large' });
+  });
+   
+    $(document).ready(function() {
+    Tipped.create(a_estacionamento, "Estacionamento", { behavior: 'mouse', size: 'large' });
+  });
+   
+    $(document).ready(function() {
+    Tipped.create(a_portaria, "Portaria", { behavior: 'mouse', size: 'large' });
+  });
+   
+    $(document).ready(function() {
+    Tipped.create(a_ginasio, "Ginásio", { behavior: 'mouse', size: 'large' });
+  });
 </script>
 
+
+
+<script>
+function setMapVisible1() {  
+$(a_campus).show();
+$(a_primeiro).hide();	
+$(a_segundo).hide();
+$(a_terceiro).hide();
+}
+		</script>
+        
+        <script>
+function setMapVisible2() {
+$(a_campus).hide();
+$(a_primeiro).show();	
+$(a_segundo).hide();
+$(a_terceiro).hide();
+
+}
+	</script>
+    
+    <script>
+function setMapVisible3() {  
+$(a_campus).hide();
+$(a_primeiro).hide();	
+$(a_segundo).show();
+$(a_terceiro).hide();
+}
+		</script>
+            <script>
+function setMapVisible4() {  
+$(a_campus).hide();
+$(a_primeiro).hide();	
+$(a_segundo).hide();
+$(a_terceiro).show();
+}
+		</script>
+
+
+
 </body>
-
 </html>
-
-
-
